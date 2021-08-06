@@ -69,8 +69,6 @@ jobs:
       - name: Build
         run: |
           cd build
-          ./make_ios_lua54.sh
-          ./make_ios_lua53.sh
           ./make_ios_luajit.sh
       - name: Upload
         uses: actions/upload-artifact@v2
@@ -95,8 +93,6 @@ jobs:
       - name: Build
         run: |
           cd build
-          ./make_osx_lua54.sh
-          ./make_osx_lua53.sh
           ./make_osx_luajit.sh
       - name: Upload
         uses: actions/upload-artifact@v2

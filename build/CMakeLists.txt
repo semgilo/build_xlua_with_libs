@@ -207,6 +207,42 @@ else ( )
     list (APPEND LUA_SOCKET luasocket/usocket.c)
 endif ( )
 
+#begin lfs
+set (LFS_SRC lfs/lfs.c)
+set_property(
+    SOURCE ${LFS_SRC}
+    APPEND
+    PROPERTY COMPILE_DEFINITIONS
+    LUA_LIB
+)
+list(APPEND THIRDPART_INC lfs)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${LFS_SRC})
+#end lfs
+
+#begin bitop
+set (BITOP_SRC bitop/bit.c)
+set_property(
+    SOURCE ${BITOP_SRC}
+    APPEND
+    PROPERTY COMPILE_DEFINITIONS
+    LUA_LIB
+)
+list(APPEND THIRDPART_INC bitop)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${BITOP_SRC})
+#end bitop
+
+#begin msgpack
+set (MSGPACK_SRC msgpack/lua_cmsgpack.c)
+set_property(
+    SOURCE ${MSGPACK_SRC}
+    APPEND
+    PROPERTY COMPILE_DEFINITIONS
+    LUA_LIB
+)
+list(APPEND THIRDPART_INC msgpack)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${MSGPACK_SRC})
+#end lfs
+
 set ( XLUA_CORE
     i64lib.c
     xlua.c

@@ -231,18 +231,6 @@ list(APPEND THIRDPART_INC bitop)
 set (THIRDPART_SRC ${THIRDPART_SRC} ${BITOP_SRC})
 #end bitop
 
-#begin msgpack
-set (MSGPACK_SRC msgpack/lua_cmsgpack.c)
-set_property(
-    SOURCE ${MSGPACK_SRC}
-    APPEND
-    PROPERTY COMPILE_DEFINITIONS
-    LUA_LIB
-)
-list(APPEND THIRDPART_INC msgpack)
-set (THIRDPART_SRC ${THIRDPART_SRC} ${MSGPACK_SRC})
-#end lfs
-
 set ( XLUA_CORE
     i64lib.c
     xlua.c

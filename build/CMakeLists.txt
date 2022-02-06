@@ -56,8 +56,8 @@ set (THIRDPART_SRC ${THIRDPART_SRC} ${RAPIDJSON_SRC})
 
 #begin lrandom
 set (LRANDOM_SRC 
-    lramdom/random.c
-    lramdom/lrandom.c)
+    lrandom/random.c
+    lrandom/lrandom.c)
 set_property(
     SOURCE ${LRANDOM_SRC}
     APPEND

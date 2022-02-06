@@ -21,12 +21,11 @@ if ( IOS )
 endif ()
 
 option ( UINT_ESPECIALLY "using custom ulong" OFF )
-option ( USING_LUAJIT "using luajit" OFF )
+option ( USING_LUAJIT "using luajit" ON )
 option ( GC64 "using gc64" OFF )
 option ( LUAC_COMPATIBLE_FORMAT "compatible format" OFF )
 option ( PBC "using pbc" OFF )
 
-# test
 find_path(XLUA_PROJECT_DIR NAMES SConstruct
     PATHS 
     ${CMAKE_SOURCE_DIR}
@@ -53,20 +52,6 @@ set_property(
 list(APPEND THIRDPART_INC  lua-rapidjson/include)
 set (THIRDPART_SRC ${THIRDPART_SRC} ${RAPIDJSON_SRC})
 #end lua-rapidjson
-
-#begin lrandom
-set (LRANDOM_SRC 
-    lrandom/random.c
-    lrandom/lrandom.c)
-set_property(
-    SOURCE ${LRANDOM_SRC}
-    APPEND
-    PROPERTY COMPILE_DEFINITIONS
-    LUA_LIB
-)
-list(APPEND THIRDPART_INC lrandom)
-set (THIRDPART_SRC ${THIRDPART_SRC} ${LRANDOM_SRC})
-#end lrandom
 
 if (NOT PBC)
 	#begin lua-profobuf

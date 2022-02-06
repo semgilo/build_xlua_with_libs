@@ -260,11 +260,7 @@ static const luaL_reg R[] =
 
 LUALIB_API int luaopen_pack(lua_State *L)
 {
-#ifdef USE_GLOBALS
- lua_register(L,"bpack",l_pack);
- lua_register(L,"bunpack",l_unpack);
-#else
+
  luaL_openlib(L, LUA_STRLIBNAME, R, 0);
-#endif
  return 0;
 }

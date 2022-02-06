@@ -232,6 +232,18 @@ list(APPEND THIRDPART_INC bitop)
 set (THIRDPART_SRC ${THIRDPART_SRC} ${BITOP_SRC})
 #end bitop
 
+#begin lpack
+set (LPACK_SRC lpack/lpack.c)
+set_property(
+    SOURCE ${LPACK_SRC}
+    APPEND
+    PROPERTY COMPILE_DEFINITIONS
+    LUA_LIB
+)
+list(APPEND THIRDPART_INC pack)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${LPACK_SRC})
+#end lpack
+
 set ( XLUA_CORE
     i64lib.c
     xlua.c

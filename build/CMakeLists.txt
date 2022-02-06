@@ -240,7 +240,7 @@ set_property(
     PROPERTY COMPILE_DEFINITIONS
     LUA_LIB
 )
-list(APPEND THIRDPART_INC pack)
+list(APPEND THIRDPART_INC lpack)
 set (THIRDPART_SRC ${THIRDPART_SRC} ${LPACK_SRC})
 #end lpack
 

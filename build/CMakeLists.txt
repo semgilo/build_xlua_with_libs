@@ -54,6 +54,20 @@ list(APPEND THIRDPART_INC  lua-rapidjson/include)
 set (THIRDPART_SRC ${THIRDPART_SRC} ${RAPIDJSON_SRC})
 #end lua-rapidjson
 
+#begin lrandom
+set (LRANDOM_SRC 
+    lramdom/random.c
+    lramdom/lrandom.c)
+set_property(
+    SOURCE ${LRANDOM_SRC}
+    APPEND
+    PROPERTY COMPILE_DEFINITIONS
+    LUA_LIB
+)
+list(APPEND THIRDPART_INC lrandom)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${LRANDOM_SRC})
+#end lrandom
+
 if (NOT PBC)
 	#begin lua-profobuf
 	set (LPB_SRC 

@@ -8,9 +8,6 @@
 
 #include <math.h>
 #include <stdio.h>
-#ifndef SERVER
-#include <platform/CCPlatformConfig.h>
-#endif // SERVER
 
 #include "lrandom.h"
 
